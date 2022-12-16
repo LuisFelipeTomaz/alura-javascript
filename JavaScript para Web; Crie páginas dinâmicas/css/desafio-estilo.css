@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --cinza: #aaa;
+  --laranja: #ffd106;
+  --laranja-escura: #f3b839;
+  --branca: #fff;
+  --luz: rgb(229, 255, 0);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #191919;
+  min-height: 100vh;
+}
+
+input {
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; 
+  background-color: #cccccc;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+input[type=button] {
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  height: 80px;
+  width: 80px;
+  font-size: 25px;
+}
+
+input[type=tel] {
+  background-color: #cccccc;
+  border-radius: 10px;
+  font-family: monospace;
+  font-size: 22px;
+  height: 40px;
+  margin-bottom: 24px;
+  padding: 10px;
+  text-align: center;
+  width: 280px;
+}
+
+input[type=button].ativa,
+input[type=button]:active {
+  background-color: var(--laranja);
+  border: 4px solid  var(--laranja);
+  box-shadow: 3px 3px 0 var(--laranja-escura) inset;
+  color: var(--branca);
+  outline: none;
+}
+
+input[type=button].focus,
+input[type=button]:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px var(--luz);
+}
+
+input[type=button].active:focus,
+input[type=button]:active:focus {
+  box-shadow: 3px 3px 0 var(--laranja-escura) inset, 1px 1px 10px var(--luz);
+}
